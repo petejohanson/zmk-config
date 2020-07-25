@@ -47,7 +47,7 @@ jobs:
           args: 'zephyr-export'
       - name: West Build (Kyria Left)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build
+        id: west-build-kyria-left
         with:
           args: 'build "-s zmk/app -b nice_nano -- -DSHIELD=kyria_left -DZMK_CONFIG=$(pwd)/config"'
       - name: Archive (Kyria Left)
@@ -57,7 +57,7 @@ jobs:
           path: build/
       - name: West Build (Kyria Right)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build
+        id: west-build-kyria-right
         with:
           args: 'build "--pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_right -DZMK_CONFIG=$(pwd)/config"'
       - name: Archive (Kyria Right)
