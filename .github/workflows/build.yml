@@ -51,7 +51,7 @@ jobs:
         with:
           args: 'build "-s zmk/app -b nice_nano -- -DSHIELD=kyria_left -DZMK_CONFIG=/github/workspace/config"'
       - name: Rename zmk.uf2
-        run: mv build/zephyr/zmk.uf2 kyria_left_nice_nano.uf2
+        run: cp build/zephyr/zmk.uf2 kyria_left_nice_nano.uf2
       - name: Archive (Kyria Left)
         uses: actions/upload-artifact@v2
         with:
@@ -63,7 +63,7 @@ jobs:
         with:
           args: 'build "--pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_right -DZMK_CONFIG=/github/workspace/config"'
       - name: Rename zmk.uf2
-        run: mv build/zephyr/zmk.uf2 kyria_right_nice_nano.uf2
+        run: cp build/zephyr/zmk.uf2 kyria_right_nice_nano.uf2
       - name: Archive (Kyria Right)
         uses: actions/upload-artifact@v2
         with:
