@@ -1,4 +1,4 @@
-on: [push, pull_request, create, fork, workflow_dispatch]
+on: [push, pull_request, create, workflow_dispatch]
 
 name: Build
 
