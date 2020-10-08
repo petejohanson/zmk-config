@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2020 Pete Johanson, Richard Jones
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        
+        default_layer {
+            bindings = <
+	    &bt BT_NXT &bt BT_CLR &kp A
+	    >;
+        };
+    };
+};
+
+
