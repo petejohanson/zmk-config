@@ -7,6 +7,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+/*
+#include <dt-bindings/zmk/outputs.h>
+*/
 
 / {
     keymap {
@@ -14,7 +17,10 @@
         
         default_layer {
             bindings = <
-	    &bt BT_NXT &bt BT_CLR &kp A
+	    &kp K_APP &kp K_MENU &cp C_MENU
+	    /*
+	    &out OUT_TOG &bt BT_CLR &kp LS(NUM_1)
+	    */
 	    >;
         };
     };
