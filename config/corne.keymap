@@ -4,6 +4,7 @@
 
 #define LOWR 1
 #define RAIS 2
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -23,15 +24,14 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | CTRL |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
-//                    | GUI |     | BTC |   | ENT |     | ALT |
-   //&kp LSFT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &trans    &trans    &trans    &trans    &trans    &trans
+// |      |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL  |
+// |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
+// |      | BT1 | BT2 | BT3 | BT4 | BT5 |   | HME |     |     | END |     |      |
+//                    |     |     | BTC |   |     |     |     |
                         bindings = <
-   &kp ESC  &kp NUM_1    &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5      &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &kp BKSP
-   &kp LCTL &trans       &trans       &trans       &trans       &trans         &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans    &trans
-   &kp LSFT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &trans    &trans    &trans    &trans    &trans    &trans
+   &trans &kp NUM_1    &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5      &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &kp DEL
+   &trans &trans       &trans       &trans       &trans       &trans         &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans    &trans
+   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp HOME    &trans    &trans    &kp END    &trans    &trans
                                       &trans &trans &bt BT_CLR &trans &trans &trans
                         >;
                 };
@@ -42,10 +42,11 @@
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | // TODO: Fix this row when &mkp is committed
 //                    | GUI |     | SPC |   | ENT |     | ALT |
+   // &kp  ESC &kp LS(NUM_1)  &kp LS(NUM_2)  &kp HASH  &kp CURU  &kp PRCT    &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN &kp BKSP
                         bindings = <
-   &kp  ESC &kp BANG  &kp ATSN  &kp HASH  &kp CURU  &kp PRCT    &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN &kp BKSP
-   &kp LCTL &trans    &trans    &trans    &trans    &trans      &kp MINUS &kp EQL  &kp LBKT &kp RBKT &kp PIPE &kp GRAV
-   &kp LSFT &trans    &trans    &trans    &trans    &trans      &trans    &trans   &trans   &trans   &kp BSLH &kp TILD
+   &kp  ESC &kp LS(NUM_1)  &kp LS(NUM_2)  &kp LS(NUM_3)  &kp LS(NUM_4)  &kp LS(NUM_5)    &kp LS(NUM_6)  &kp LS(NUM_7) &kp LS(NUM_8) &kp LS(NUM_9) &kp LS(NUM_0) &kp BKSP
+   &kp LCTL &trans    &trans    &trans    &trans    &trans      &kp MINUS &kp EQL  &kp LBKT &kp RBKT &kp LS(BSLH) &kp GRAV
+   &kp LSFT &trans    &trans    &trans    &trans    &trans      &kp LS(MINUS)    &kp LS(EQL)   &kp LS(LBKT)   &kp LS(RBKT)   &kp BSLH &kp LS(GRAV)
                                       &trans &trans &trans   &trans &trans &trans
                         >;
                 };
