@@ -9,7 +9,7 @@
 	mosi-pin = <21>;
 	miso-pin = <12>;
 
-	cs-gpios = <&gpio0 16 0>;
+	cs-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
 
 	ssd16xxfb@0 {
 		compatible = "gooddisplay,il0323";
