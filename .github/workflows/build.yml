@@ -31,6 +31,12 @@ jobs:
         run: west init -l config
       - name: Update modules (west update)
         run: west -vvv update
+      - name: List zmk
+        run: ls -l zmk
+        if: ${{ always() }}
+      - name: List app
+        run: ls -l zmk/app
+        if: ${{ always() }}
       - name: Export Zephyr CMake package (west zephyr-export)
         run: west zephyr-export
       - name: West Build (Kyria Left)
