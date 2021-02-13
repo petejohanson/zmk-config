@@ -37,6 +37,9 @@ jobs:
       - name: List app
         run: ls -l zmk/app
         if: ${{ always() }}
+      - name: List app
+        run: ls zmk/app
+        if: ${{ always() }}
       - name: Export Zephyr CMake package (west zephyr-export)
         run: west zephyr-export
       - name: West Build (Kyria Left)
