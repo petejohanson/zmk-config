@@ -8,6 +8,6 @@ manifest:
     - name: zmk
       remote: petejohanson
       revision: core/modular-build-exploration
-      import: west.yml
+      import: app/west.yml
   self:
     path: config
