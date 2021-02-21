@@ -1,0 +1,11 @@
+# STM32F401 BlackPill board configuration
+
+# Copyright (c) 2021 Pete Johanson
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_STM32F401_BLACKPILL
+
+config BOARD
+	default "stm32f401_blackpill"
+
+endif # BOARD_STM32F401_BLACKPILL

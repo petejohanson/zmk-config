@@ -1,0 +1,8 @@
+# STM32F401 BlackPill board configuration
+
+# Copyright (c) 2021 Peter Johansons
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_STM32F401_BLACKPILL
+	bool "STM32F401 BlackPill Development Board"
+	depends on SOC_STM32F401CC
