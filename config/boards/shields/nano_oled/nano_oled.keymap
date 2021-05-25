@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2020 Pete Johanson, Richard Jones
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+	    label = "DEF";
+		bindings = <
+	    &bt BT_CLR &kp LS(NUM_1)
+	    /*
+	    &bt BT_NXT &bt BT_CLR &kp LS(NUM_1)
+	    &kp K_APP &kp K_MENU &cp C_MENU
+	    */
+	    >;
+        };
+
+	mod_layer {
+		label = "MODIFIERS OH SO LONG";
+		bindings = <
+	    &trans &kp A
+		>;
+	};
+    };
+};
+
+

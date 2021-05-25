@@ -1,0 +1,45 @@
+/*
+ * Copyright (c) 2020 Pete Johanson, Richard Jones
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+	};
+
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-direct";
+		label = "KSCAN";
+
+		input-gpios
+			= <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			;
+	};
+};
+
+&i2c0 {
+	status = "okay";
+	scl-pin = <11>;
+	sda-pin = <32>;
+
+	oled: ssd1306@3c {
+		compatible = "solomon,ssd1306fb";
+		reg = <0x3c>;
+		label = "DISPLAY";
+		width = <128>;
+		height = <32>;
+		segment-offset = <0>;
+		page-offset = <0>;
+		display-offset = <0>;
+		multiplex-ratio = <31>;
+		com-invdir;
+		segment-remap;
+		com-sequential;
+		prechargep = <0x22>;
+	};
+};
