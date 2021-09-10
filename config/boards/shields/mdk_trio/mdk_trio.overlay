@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/matrix-transform.h>
+#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
 	chosen {
@@ -12,17 +12,12 @@
 	};
 
 	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-matrix";
+		compatible = "zmk,kscan-gpio-direct";
 		label = "KSCAN";
 
-		diode-direction = "col2row";
-		col-gpios
-			= <&gpio0 27 (GPIO_ACTIVE_HIGH)>
-			, <&gpio0 26 (GPIO_ACTIVE_HIGH)>
-			, <&gpio0 25 (GPIO_ACTIVE_HIGH)>
-			;
-		row-gpios
-			= <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		input-gpios
+			= <&gpio0 26 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&gpio0 25 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 			;
 	};
 };
